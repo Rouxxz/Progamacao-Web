@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Introdução ao CSS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <h1 id="titulo">Cadastro Acadêmico</h1>
+        <p class="sub">Vamos aplicar CSS: seletores, cores, fontes e estilos básicos.</p>
+    </header>
+    <main class="container">
+        <section class="card">
+            <h2 class="destaque">Formulário (base)</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Dados do Aluno</legend>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required />
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="exemplo@email.com" />
+                    <label for="msg">Mensagem:</label>
+                    <textarea id="msg" name="mensagem" rows="4"></textarea>
+                    <div class="acoes">
+                        <button type="submit">Enviar</button>
+                        <button type="reset" class="secundario">Limpar</button>
+                    </div>
+                </fieldset>
+            </form>
+            <div class="alerta" role="alert">
+                Exemplo de alerta: verifique os campos obrigatórios.
+            </div>
+        </section>
+    </main>
+    <footer class="rodape">
+        <small>Exercício Prático - Introdução ao CSS</small>
+    </footer>
+</body>
+
+</html>
