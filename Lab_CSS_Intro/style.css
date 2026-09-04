@@ -3,11 +3,12 @@
 }
 
 :root {
-    --cor-primaria: #0a66c2;
+    --cor-primaria: #14532d;
     --cor-escuro: #0b2239;
     --cor-fundo: #f5f7fb;
     --cor-borda: #e3e6ee;
     --cor-erro: #b42318;
+    --cor-sucesso: #06402B;
 }
 
 /* TIPOGRAFIA GLOBAL */
@@ -54,7 +55,7 @@ body {
 }
 
 .destaque {
-    color: var(--cor-primaria);
+    color: hsl(116, 21%, 32%);
 }
 
 /* FORMULÁRIO */
@@ -94,6 +95,11 @@ textarea:focus {
     border-color: var(--cor-primaria);
 }
 
+input:hover{
+    border-color: #000203;
+    /* cursor: pointer; */
+}
+
 /* botões */
 .acoes {
     display: flex;
@@ -128,6 +134,15 @@ button.secundario {
     border: 1px solid #f1c4c1;
     background: #fdecec;
     color: var(--cor-erro);
+}
+
+.sucesso {
+    margin-top: 8px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #c1f1c3;
+    background: #f0fdec;
+    color: var(--cor-sucesso);
 }
 
 /* rodapé */
