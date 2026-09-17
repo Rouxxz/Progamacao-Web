@@ -5,34 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Responsivo</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <!-- Sidebar -->
-     <div class="sidebar">
-        <a href="#" class="logo">
-            <i class='bx bx-code-alt'></i>
-            <div class="logo-name"><span>Dash</span>board</div>
-        </a>
-        <ul class="side-menu">
-            <li><a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
-            <li><a href="#"><i class='bx bx-store-alt'></i>Loja</a></li>
-            <li class="active"><a href="#"><i class='bx bx-analyse'></i>Análise de dados</a></li>
-            <li><a href="#"><i class='bx bx-message-square-dots'></i>Tickets</a></li>
-            <li><a href="#"><i class='bx bx-group'></i>Usuários</a></li>
-            <li><a href="#"><i class='bx bx-cog'></i>Configurações</a></li>
-        </ul>
-        <ul class="side-menu">
-            <li>
-                <a href="#" class="logout">
-                    <i class='bx bx-log-out-circle'></i>
-                    Sair
-                </a>
-            </li>
-        </ul>
-     </div>
 
-    <script src="index.js"></script>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">Meu Dashboard</div>
+        <nav class="menu">
+            <a href="#">Configurações</a>
+            <a href="#">Sair</a>
+        </nav>
+    </header>
+
+    <!-- Dashboard Container (Grid) -->
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#"><i class='bx bxs-dashboard'></i>Visão Geral</a></li>
+                <li><a href="#"><i class='bx bx-analyse'></i>Gráficos</a></li>
+                <li><a href="#"><i class='bx bx-group'></i>Usuário</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h2>Visão Geral</h2>
+            
+            <!-- Cards fluidos -->
+            <section class="cards-grid">
+                <div class="card"><h3>Vendas</h3><p>R$ 15.000</p></div>
+                <div class="card"><h3>Acessos</h3><p>1.240</p></div>
+                <div class="card"><h3>Novos Usuários</h3><p>42</p></div>
+                <div class="card"><h3>Tarefas</h3><p>8 Pendentes</p></div>
+            </section>
+
+            <!-- Tabela com scroll -->
+            <section class="tabela-section">
+                <h3>Últimas Transações</h3>
+                <div class="tabela-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Data</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#001</td>
+                                <td>Maria Silva</td>
+                                <td>15/10/2023</td>
+                                <td>R$ 250,00</td>
+                                <td>Concluído</td>
+                            </tr>
+                            <tr>
+                                <td>#002</td>
+                                <td>João Souza</td>
+                                <td>16/10/2023</td>
+                                <td>R$ 120,50</td>
+                                <td>Pendente</td>
+                            </tr>
+                            <tr>
+                                <td>#003</td>
+                                <td>Empresa XYZ</td>
+                                <td>16/10/2023</td>
+                                <td>R$ 3.500,00</td>
+                                <td>Processando</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2023 Meu Dashboard. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>
