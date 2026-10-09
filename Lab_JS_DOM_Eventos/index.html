@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratório - JavaScript DOM e Eventos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <h2>Laboratório Prático - Mini-Projeto Inteligente</h2>
+
+    <!-- Sumário de erros para acessibilidade e usabilidade -->
+    <div id="sumario-erros" class="sumario-erros" aria-live="polite" hidden></div>
+
+    <form id="form-projeto" novalidate>
+      
+      <!-- Campo Nome com espelho e contador -->
+      <div class="campo">
+        <label for="nome">Nome Completo (Mín. 3 letras):</label>
+        <input type="text" id="nome" placeholder="Digite seu nome">
+        <span id="espelho-nome" class="dica">Você digitou: </span>
+        <span id="contador-nome" class="contador">0/50</span>
+      </div>
+
+      <!-- Campo E-mail com foco e blur -->
+      <div class="campo">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" placeholder="nome@dominio.com">
+        <small id="msg-email" class="dica"></small>
+      </div>
+
+      <!-- Campo Senha com indicador de força -->
+      <div class="campo">
+        <label for="senha">Senha (Mín. 6 caracteres):</label>
+        <input type="password" id="senha" placeholder="Crie sua senha">
+        <div id="indicador-forca" class="barra-forca"></div>
+        <small id="msg-senha" class="dica">Força: -</small>
+      </div>
+
+      <!-- Select Dependente Estado / Cidade -->
+      <div class="campo">
+        <label for="estado">Estado:</label>
+        <select id="estado">
+          <option value="">Selecione o Estado</option>
+          <option value="SP">São Paulo</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="MG">Minas Gerais</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="cidade-proj">Cidade:</label>
+        <select id="cidade-proj" disabled>
+          <option value="">Selecione primeiro o estado</option>
+        </select>
+      </div>
+
+      <!-- Checkbox de Termos -->
+      <div class="campo checkbox-campo">
+        <label>
+          <input type="checkbox" id="termos"> Aceito os termos de serviço
+        </label>
+      </div>
+
+      <!-- Botão de Envio (desabilitado até formulário ser válido) -->
+      <button type="submit" id="btn-submit" disabled>Cadastrar</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+/* Estilos Globais */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  padding: 30px 15px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.campo {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-campo {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-campo label {
+  font-weight: normal;
+  cursor: pointer;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+/* Feedback visual de Foco, Sucesso e Erro */
+input:focus, select:focus {
+  border-color: #0066cc;
+  outline: none;
+}
+
+.campo-erro { 
+  border-color: #d9534f !important; 
+}
+
+.campo-ok { 
+  border-color: #5cb85c !important; 
+}
+
+/* Dicas e Contadores */
+.dica { 
+  font-size: 0.85rem; 
+  color: #666; 
+  margin-top: 5px; 
+}
+
+.contador { 
+  font-size: 0.85rem; 
+  text-align: right; 
+  margin-top: 3px;
+  color: #666;
+}
+
+.texto-erro { 
+  color: #d9534f; 
+  font-weight: bold;
+}
+
+/* Indicador de Força de Senha */
+.barra-forca {
+  height: 6px;
+  margin-top: 6px;
+  border-radius: 3px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.forca-fraca { width: 33%; background-color: #d9534f; }
+.forca-media { width: 66%; background-color: #f0ad4e; }
+.forca-forte { width: 100%; background-color: #5cb85c; }
+
+/* Sumário de Erros (Acessibilidade UX) */
+.sumario-erros {
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  color: #a94442;
+  padding: 12px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.sumario-erros ul {
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+/* Botão Enviar */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #004c99;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
