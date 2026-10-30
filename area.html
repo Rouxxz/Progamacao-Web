@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Área Restrita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- O nome do usuário decodificado aparecerá aqui -->
+        <h2 id="boasVindas">Carregando...</h2>
+        <p>Você está na área protegida.</p>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <script>
+        // 1. Recuperar o token do localStorage
+        const token = localStorage.getItem('token');
+
+        // 2. Bloquear o acesso caso o token não exista
+        if (!token) {
+            alert("Acesso negado. O token não foi encontrado.");
+            window.location.href = 'index.html';
+        } else {
+            // 3. Exibir o nome do usuário decodificado no topo da página
+            try {
+                // O JWT é dividido em 3 partes por ponto. O Payload é a segunda parte (índice 1)
+                const payloadBase64 = token.split('.')[1];
+                
+                // Decodifica a string Base64 para JSON
+                const payloadString = atob(payloadBase64);
+                const payloadDados = JSON.parse(payloadString);
+                
+                // Exibe o nome extraído do Payload
+                document.getElementById('boasVindas').textContent = `Bem-vindo, ${payloadDados.name}!`;
+            } catch (erro) {
+                console.error("Erro ao decodificar o JWT", erro);
+                document.getElementById('boasVindas').textContent = "Erro ao processar dados.";
+            }
+        }
+
+        // 4. Botão de Logout que apaga o token e volta para index.html
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('token');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
