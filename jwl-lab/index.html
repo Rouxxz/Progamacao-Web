@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login JWT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login Simulado</h2>
+        <input type="email" id="email" placeholder="E-mail" required>
+        <input type="password" id="senha" placeholder="Senha" required>
+        <button id="loginBtn">Entrar</button>
+        <p id="mensagem"></p>
+    </div>
+
+    <script>
+        // Token fixo fornecido para a atividade (com correções de formatação Base64 para garantir execução)
+        const tokenFixo = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIzLCJuYW1lIjoiRW5nLiBDb21wdXRhXHUwMGU3XHUwMGUzbyIsInJvbGUiOiJKV1QiLCJpYXQiOjE3NTk5ODEzMTcsImV4cCI6MTc1OTk4NDkxN30.b1KfcSFlInRwYnvRA0Ae5jYuL59KZmCsufPgISNGq0X0";
+
+        document.getElementById('loginBtn').addEventListener('click', () => {
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const mensagem = document.getElementById('mensagem');
+
+            // 1. Verificar se os campos foram preenchidos
+            if (email && senha) {
+                // 2. Armazenar o token no localStorage simulando a resposta do servidor
+                localStorage.setItem('token', tokenFixo);
+                
+                // 3. Redirecionar o usuário para a página da área restrita
+                window.location.href = 'area.html';
+            } else {
+                mensagem.textContent = "Preencha e-mail e senha.";
+            }
+        });
+    </script>
+</body>
+</html>
